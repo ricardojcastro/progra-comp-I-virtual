@@ -1,0 +1,406 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>LanguageExt.Rx</name>
+    </assembly>
+    <members>
+        <member name="M:LanguageExt.AffRxExtensions.Consume``1(System.IObservable{``0},System.Func{``0,LanguageExt.Aff{LanguageExt.Unit}},System.Threading.CancellationToken)">
+            <summary>
+            Consume an observable stream
+            </summary>
+            <remarks>Each item is passed to the `next` function.  When the stream completes the Aff returns
+            which allows subsequent operations to be composed.</remarks>
+            <param name="ma">Observable to consume</param>
+            <param name="next">Next function to call</param>
+            <param name="token">Cancellation token</param>
+            <typeparam name="A">Bound type</typeparam>
+            <returns>Aff of unit</returns>
+        </member>
+        <member name="M:LanguageExt.AffRxExtensions.Consume``2(System.IObservable{``1},System.Func{``1,LanguageExt.Aff{``0,LanguageExt.Unit}})">
+            <summary>
+            Consume an observable stream
+            </summary>
+            <remarks>Each item is passed to the `next` function.  When the stream completes the Aff returns
+            which allows subsequent operations to be composed.</remarks>
+            <param name="ma">Observable to consume</param>
+            <param name="next">Next function to call</param>
+            <typeparam name="A">Bound type</typeparam>
+            <returns>Aff of unit</returns>
+        </member>
+        <member name="M:LanguageExt.AffRxExtensions.Fold``2(System.IObservable{``1},``0,System.Func{``0,``1,LanguageExt.Aff{``0}},System.Threading.CancellationToken)">
+            <summary>
+            Fold an observable stream
+            </summary>
+            <remarks>Each item is passed to the `next` function, with a state value.  The state is aggregated over the
+            stream by passing the return value from `next` to the subsequent calls.  When the stream completes, the
+            aggregate state is returned.
+            </remarks>
+            <param name="ma">Observable to fold</param>
+            <param name="next">Next function to call</param>
+            <typeparam name="A">Bound type</typeparam>
+            <param name="token">Cancellation token</param>
+            <returns>Aff of S</returns>
+        </member>
+        <member name="M:LanguageExt.AffRxExtensions.Fold``3(System.IObservable{``2},``1,System.Func{``1,``2,LanguageExt.Aff{``0,``1}})">
+            <summary>
+            Fold an observable stream
+            </summary>
+            <remarks>Each item is passed to the `next` function, with a state value.  The state is aggregated over the
+            stream by passing the return value from `next` to the subsequent calls.  When the stream completes, the
+            aggregate state is returned.
+            </remarks>
+            <param name="ma">Observable to fold</param>
+            <param name="next">Next function to call</param>
+            <typeparam name="A">Bound type</typeparam>
+            <returns>Aff of S</returns>
+        </member>
+        <member name="M:LanguageExt.AtomExtensions.OnChange``1(LanguageExt.Atom{``0})">
+            <summary>
+            Observe changes to the `Atom`
+            </summary>
+            <param name="atom">Atom to observe</param>
+            <typeparam name="A">Value type</typeparam>
+            <returns>Observable atom</returns>
+        </member>
+        <member name="M:LanguageExt.AtomExtensions.OnChange``2(LanguageExt.Atom{``0,``1})">
+            <summary>
+            Observe changes to the `Atom`
+            </summary>
+            <param name="atom">Atom to observe</param>
+            <typeparam name="A">Value type</typeparam>
+            <returns>Observable atom</returns>
+        </member>
+        <member name="M:LanguageExt.AtomExtensions.OnChange``1(LanguageExt.Ref{``0})">
+            <summary>
+            Observe changes to the `Ref`
+            </summary>
+            <param name="value">Ref to observe</param>
+            <typeparam name="A">Value type</typeparam>
+            <returns>Observable ref</returns>
+        </member>
+        <member name="M:LanguageExt.AtomExtensions.OnChange``2(LanguageExt.AtomHashMap{``0,``1})">
+            <summary>
+            Observe changes to the `AtomHashMap`
+            </summary>
+            <remarks>This publishes the full patch of a change, which may contain multiple
+            key updates (if done from within a transaction for-example).</remarks>
+            <param name="atom">`AtomHashMap` to observe</param>
+            <typeparam name="A">Value type</typeparam>
+            <returns>Observable `AtomHashMap`</returns>
+        </member>
+        <member name="M:LanguageExt.AtomExtensions.OnChange``3(LanguageExt.AtomHashMap{``0,``1,``2})">
+            <summary>
+            Observe changes to the `AtomHashMap`
+            </summary>
+            <remarks>This publishes the full patch of a change, which may contain multiple
+            key updates (if done from within a transaction for-example).</remarks>
+            <param name="atom">`AtomHashMap` to observe</param>
+            <typeparam name="A">Value type</typeparam>
+            <returns>Observable `AtomHashMap`</returns>
+        </member>
+        <!-- Badly formed XML comment ignored for member "M:LanguageExt.AtomExtensions.OnEntryChange``2(LanguageExt.AtomHashMap{``0,``1})" -->
+        <!-- Badly formed XML comment ignored for member "M:LanguageExt.AtomExtensions.OnEntryChange``3(LanguageExt.AtomHashMap{``0,``1,``2})" -->
+        <member name="M:LanguageExt.AtomExtensions.OnMapChange``3(LanguageExt.AtomHashMap{``0,``1,``2})">
+            <summary>
+            Observe changes to the `AtomHashMap`
+            </summary>
+            <remarks>This publishes the latest state of an `AtomHashMap`</remarks>
+            <param name="atom">`AtomHashMap` to observe</param>
+            <typeparam name="A">Value type</typeparam>
+            <returns>Observable `HashMap`</returns>
+        </member>
+        <member name="M:LanguageExt.EitherRxExtensions.MatchObservable``3(LanguageExt.Either{``0,System.IObservable{``1}},System.Func{``1,``2},System.Func{``0,``2})">
+            <summary>
+            Match the two states of the Either and return a stream of non-null R2s.
+            </summary>
+        </member>
+        <member name="M:LanguageExt.EitherRxExtensions.MatchObservable``3(System.IObservable{LanguageExt.Either{``0,``1}},System.Func{``1,``2},System.Func{``0,``2})">
+            <summary>
+            Match the two states of the IObservable Either and return a stream of non-null R2s.
+            </summary>
+        </member>
+        <member name="M:LanguageExt.EitherRxExtensions.MatchObservable``3(LanguageExt.Either{``0,``1},System.Func{``1,System.IObservable{``2}},System.Func{``0,``2})">
+            <summary>
+            Match the two states of the Either and return an observable stream of non-null R2s.
+            </summary>
+        </member>
+        <member name="M:LanguageExt.EitherRxExtensions.MatchObservable``3(LanguageExt.Either{``0,``1},System.Func{``1,System.IObservable{``2}},System.Func{``0,System.IObservable{``2}})">
+            <summary>
+            Match the two states of the Either and return an observable stream of non-null R2s.
+            </summary>
+        </member>
+        <member name="M:LanguageExt.NullableRxExtensions.MatchObservable``2(System.Nullable{``0},System.Func{``0,System.IObservable{``1}},System.Func{``1})">
+            <summary>
+            Match the two states of the Nullable and return an observable stream of Rs.
+            </summary>
+            <typeparam name="R">Return type</typeparam>
+            <param name="Some">Some handler</param>
+            <param name="None">None handler</param>
+            <returns>A stream of Rs</returns>
+        </member>
+        <member name="M:LanguageExt.NullableRxExtensions.MatchObservable``2(System.IObservable{System.Nullable{``0}},System.Func{``0,``1},System.Func{``1})">
+            <summary>
+            Match the two states of the IObservable&lt;Nullable&lt;T&gt;&gt; and return a stream of non-null Rs.
+            </summary>
+            <typeparam name="R">Return type</typeparam>
+            <param name="Some">Some handler</param>
+            <param name="None">None handler</param>
+            <returns>A stream of Rs</returns>
+        </member>
+        <member name="M:LanguageExt.NullableRxExtensions.MatchObservable``2(System.Nullable{``0},System.Func{``0,System.IObservable{``1}},System.Func{System.IObservable{``1}})">
+            <summary>
+            Match the two states of the Nullable and return an observable stream of Rs.
+            </summary>
+            <typeparam name="R">Return type</typeparam>
+            <param name="Some">Some handler</param>
+            <param name="None">None handler</param>
+            <returns>A stream of Rs</returns>
+        </member>
+        <member name="M:LanguageExt.OptionRxExtensions.MatchObservable``2(LanguageExt.Option{``0},System.Func{``0,System.IObservable{``1}},System.Func{``1})">
+            <summary>
+            Match the two states of the Option and return an observable stream of non-null Rs.
+            </summary>
+            <typeparam name="B">Return type</typeparam>
+            <param name="Some">Some handler.  Must not return null.</param>
+            <param name="None">None handler.  Must not return null.</param>
+            <returns>A stream of non-null Rs</returns>
+        </member>
+        <member name="M:LanguageExt.OptionRxExtensions.MatchObservable``2(LanguageExt.Option{``0},System.Func{``0,System.IObservable{``1}},System.Func{System.IObservable{``1}})">
+            <summary>
+            Match the two states of the Option and return an observable stream of non-null Rs.
+            </summary>
+            <typeparam name="B">Return type</typeparam>
+            <param name="Some">Some handler.  Must not return null.</param>
+            <param name="None">None handler.  Must not return null.</param>
+            <returns>A stream of non-null Rs</returns>
+        </member>
+        <member name="M:LanguageExt.OptionUnsafeRxExtensions.MatchObservable``2(LanguageExt.OptionUnsafe{``0},System.Func{``0,System.IObservable{``1}},System.Func{``1})">
+            <summary>
+            Match the two states of the OptionUnsafe and return an observable stream of non-null Rs.
+            </summary>
+            <typeparam name="B">Return type</typeparam>
+            <param name="Some">Some handler.  Must not return null.</param>
+            <param name="None">None handler.  Must not return null.</param>
+            <returns>A stream of non-null Rs</returns>
+        </member>
+        <member name="M:LanguageExt.OptionUnsafeRxExtensions.MatchObservable``2(LanguageExt.OptionUnsafe{``0},System.Func{``0,System.IObservable{``1}},System.Func{System.IObservable{``1}})">
+            <summary>
+            Match the two states of the OptionUnsafe and return an observable stream of non-null Rs.
+            </summary>
+            <typeparam name="B">Return type</typeparam>
+            <param name="Some">Some handler.  Must not return null.</param>
+            <param name="None">None handler.  Must not return null.</param>
+            <returns>A stream of non-null Rs</returns>
+        </member>
+        <member name="M:LanguageExt.PreludeRx.delay``1(System.Func{``0},System.TimeSpan)">
+            <summary>
+            Execute a function after a specified delay
+            </summary>
+            <param name="f">Function to execute</param>
+            <param name="delayFor">Time span to delay for</param>
+            <returns>IObservable T with the result</returns>
+        </member>
+        <member name="M:LanguageExt.PreludeRx.delay``1(System.Func{``0},System.DateTime)">
+            <summary>
+            Execute a function at a specific time
+            </summary>
+            <remarks>
+            This will fail to be accurate across a Daylight Saving Time boundary
+            </remarks>
+            <param name="f">Function to execute</param>
+            <param name="delayUntil">DateTime to wake up at.</param>
+            <returns>IObservable T with the result</returns>
+        </member>
+        <member name="M:LanguageExt.TaskTryRxExtensions.MatchObservable``2(System.Threading.Tasks.Task{LanguageExt.Try{``0}},System.Func{``0,System.IObservable{``1}},System.Func{System.Exception,``1})">
+            <summary>
+            Turns the computation into an observable stream
+            </summary>
+            <typeparam name="A">Bound type</typeparam>
+            <typeparam name="R">Returned observable bound type</typeparam>
+            <param name="self">This</param>
+            <param name="Succ">Function to call when the operation succeeds</param>
+            <param name="Fail">Function to call when the operation fails</param>
+            <returns>An observable that represents the result of Succ or Fail</returns>
+        </member>
+        <member name="M:LanguageExt.TaskTryRxExtensions.MatchObservable``2(System.Threading.Tasks.Task{LanguageExt.Try{``0}},System.Func{``0,System.IObservable{``1}},System.Func{System.Exception,System.IObservable{``1}})">
+            <summary>
+            Turns the computation into an observable stream
+            </summary>
+            <typeparam name="A">Bound type</typeparam>
+            <typeparam name="R">Returned observable bound type</typeparam>
+            <param name="self">This</param>
+            <param name="Succ">Function to call when the operation succeeds</param>
+            <param name="Fail">Function to call when the operation fails</param>
+            <returns>An observable that represents the result of Succ or Fail</returns>
+        </member>
+        <member name="M:LanguageExt.TaskTryRxExtensions.MatchObservable``2(System.Threading.Tasks.Task{LanguageExt.Try{``0}},System.Func{``0,``1},System.Func{System.Exception,System.IObservable{``1}})">
+            <summary>
+            Turns the computation into an observable stream
+            </summary>
+            <typeparam name="A">Bound type</typeparam>
+            <typeparam name="R">Returned observable bound type</typeparam>
+            <param name="self">This</param>
+            <param name="Succ">Function to call when the operation succeeds</param>
+            <param name="Fail">Function to call when the operation fails</param>
+            <returns>An observable that represents the result of Succ or Fail</returns>
+        </member>
+        <member name="M:LanguageExt.TryRxExtensions.MatchObservable``2(LanguageExt.Try{``0},System.Func{``0,System.IObservable{``1}},System.Func{System.Exception,``1})">
+            <summary>
+            Turns the computation into an observable stream
+            </summary>
+            <typeparam name="A">Bound type</typeparam>
+            <typeparam name="R">Returned observable bound type</typeparam>
+            <param name="self">This</param>
+            <param name="Succ">Function to call when the operation succeeds</param>
+            <param name="Fail">Function to call when the operation fails</param>
+            <returns>An observable that represents the result of Succ or Fail</returns>
+        </member>
+        <member name="M:LanguageExt.TryRxExtensions.MatchObservable``2(LanguageExt.Try{``0},System.Func{``0,System.IObservable{``1}},System.Func{System.Exception,System.IObservable{``1}})">
+            <summary>
+            Turns the computation into an observable stream
+            </summary>
+            <typeparam name="A">Bound type</typeparam>
+            <typeparam name="R">Returned observable bound type</typeparam>
+            <param name="self">This</param>
+            <param name="Succ">Function to call when the operation succeeds</param>
+            <param name="Fail">Function to call when the operation fails</param>
+            <returns>An observable that represents the result of Succ or Fail</returns>
+        </member>
+        <member name="M:LanguageExt.TryRxExtensions.MatchObservable``2(LanguageExt.Try{``0},System.Func{``0,``1},System.Func{System.Exception,System.IObservable{``1}})">
+            <summary>
+            Turns the computation into an observable stream
+            </summary>
+            <typeparam name="A">Bound type</typeparam>
+            <typeparam name="R">Returned observable bound type</typeparam>
+            <param name="self">This</param>
+            <param name="Succ">Function to call when the operation succeeds</param>
+            <param name="Fail">Function to call when the operation fails</param>
+            <returns>An observable that represents the result of Succ or Fail</returns>
+        </member>
+        <member name="M:LanguageExt.TryAsyncRxExtensions.MatchObservable``2(LanguageExt.TryAsync{``0},System.Func{``0,System.IObservable{``1}},System.Func{System.Exception,``1})">
+            <summary>
+            Turns the computation into an observable stream
+            </summary>
+            <typeparam name="A">Bound type</typeparam>
+            <typeparam name="B">Returned observable bound type</typeparam>
+            <param name="ma">This</param>
+            <param name="Succ">Function to call when the operation succeeds</param>
+            <param name="Fail">Function to call when the operation fails</param>
+            <returns>An observable that represents the result of Succ or Fail</returns>
+        </member>
+        <member name="M:LanguageExt.TryAsyncRxExtensions.MatchObservable``2(LanguageExt.TryAsync{``0},System.Func{``0,System.IObservable{``1}},System.Func{System.Exception,System.IObservable{``1}})">
+            <summary>
+            Turns the computation into an observable stream
+            </summary>
+            <typeparam name="A">Bound type</typeparam>
+            <typeparam name="R">Returned observable bound type</typeparam>
+            <param name="ma">This</param>
+            <param name="Succ">Function to call when the operation succeeds</param>
+            <param name="Fail">Function to call when the operation fails</param>
+            <returns>An observable that represents the result of Succ or Fail</returns>
+        </member>
+        <member name="M:LanguageExt.TryAsyncRxExtensions.MatchObservable``2(LanguageExt.TryAsync{``0},System.Func{``0,``1},System.Func{System.Exception,System.IObservable{``1}})">
+            <summary>
+            Turns the computation into an observable stream
+            </summary>
+            <typeparam name="A">Bound type</typeparam>
+            <typeparam name="R">Returned observable bound type</typeparam>
+            <param name="ma">This</param>
+            <param name="Succ">Function to call when the operation succeeds</param>
+            <param name="Fail">Function to call when the operation fails</param>
+            <returns>An observable that represents the result of Succ or Fail</returns>
+        </member>
+        <member name="M:LanguageExt.TryOptionAsyncRxExtensions.MatchObservable``2(LanguageExt.TryOptionAsync{``0},System.Func{``0,System.IObservable{``1}},System.Func{``1},System.Func{System.Exception,``1})">
+            <summary>
+            Turns the computation into an observable stream
+            </summary>
+            <typeparam name="A">Bound type</typeparam>
+            <typeparam name="B">Returned observable bound type</typeparam>
+            <param name="ma">This</param>
+            <param name="Some">Function to call when the operation succeeds</param>
+            <param name="None">Function to call when the operation succeeds but returns no value</param>
+            <param name="Fail">Function to call when the operation fails</param>
+            <returns>An observable that represents the result of Succ or Fail</returns>
+        </member>
+        <member name="M:LanguageExt.TryOptionAsyncRxExtensions.MatchObservable``2(LanguageExt.TryOptionAsync{``0},System.Func{``0,System.IObservable{``1}},System.Func{System.IObservable{``1}},System.Func{System.Exception,``1})">
+            <summary>
+            Turns the computation into an observable stream
+            </summary>
+            <typeparam name="A">Bound type</typeparam>
+            <typeparam name="B">Returned observable bound type</typeparam>
+            <param name="ma">This</param>
+            <param name="Some">Function to call when the operation succeeds</param>
+            <param name="None">Function to call when the operation succeeds but returns no value</param>
+            <param name="Fail">Function to call when the operation fails</param>
+            <returns>An observable that represents the result of Succ or Fail</returns>
+        </member>
+        <member name="M:LanguageExt.TryOptionAsyncRxExtensions.MatchObservable``2(LanguageExt.TryOptionAsync{``0},System.Func{``0,System.IObservable{``1}},System.Func{``1},System.Func{System.Exception,System.IObservable{``1}})">
+            <summary>
+            Turns the computation into an observable stream
+            </summary>
+            <typeparam name="A">Bound type</typeparam>
+            <typeparam name="R">Returned observable bound type</typeparam>
+            <param name="ma">This</param>
+            <param name="Some">Function to call when the operation succeeds</param>
+            <param name="None">Function to call when the operation succeeds but returns no value</param>
+            <param name="Fail">Function to call when the operation fails</param>
+            <returns>An observable that represents the result of Succ or Fail</returns>
+        </member>
+        <member name="M:LanguageExt.TryOptionAsyncRxExtensions.MatchObservable``2(LanguageExt.TryOptionAsync{``0},System.Func{``0,System.IObservable{``1}},System.Func{System.IObservable{``1}},System.Func{System.Exception,System.IObservable{``1}})">
+            <summary>
+            Turns the computation into an observable stream
+            </summary>
+            <typeparam name="A">Bound type</typeparam>
+            <typeparam name="R">Returned observable bound type</typeparam>
+            <param name="ma">This</param>
+            <param name="Some">Function to call when the operation succeeds</param>
+            <param name="None">Function to call when the operation succeeds but returns no value</param>
+            <param name="Fail">Function to call when the operation fails</param>
+            <returns>An observable that represents the result of Succ or Fail</returns>
+        </member>
+        <member name="M:LanguageExt.TryOptionAsyncRxExtensions.MatchObservable``2(LanguageExt.TryOptionAsync{``0},System.Func{``0,``1},System.Func{``1},System.Func{System.Exception,System.IObservable{``1}})">
+            <summary>
+            Turns the computation into an observable stream
+            </summary>
+            <typeparam name="A">Bound type</typeparam>
+            <typeparam name="R">Returned observable bound type</typeparam>
+            <param name="ma">This</param>
+            <param name="Some">Function to call when the operation succeeds</param>
+            <param name="None">Function to call when the operation succeeds but returns no value</param>
+            <param name="Fail">Function to call when the operation fails</param>
+            <returns>An observable that represents the result of Succ or Fail</returns>
+        </member>
+        <member name="M:LanguageExt.TryOptionAsyncRxExtensions.MatchObservable``2(LanguageExt.TryOptionAsync{``0},System.Func{``0,``1},System.Func{System.IObservable{``1}},System.Func{System.Exception,System.IObservable{``1}})">
+            <summary>
+            Turns the computation into an observable stream
+            </summary>
+            <typeparam name="A">Bound type</typeparam>
+            <typeparam name="R">Returned observable bound type</typeparam>
+            <param name="ma">This</param>
+            <param name="Some">Function to call when the operation succeeds</param>
+            <param name="None">Function to call when the operation succeeds but returns no value</param>
+            <param name="Fail">Function to call when the operation fails</param>
+            <returns>An observable that represents the result of Succ or Fail</returns>
+        </member>
+        <member name="M:LanguageExt.ValidationRxExtensions.MatchObservable``4(LanguageExt.Validation{``0,``1,``2},System.Func{``2,System.IObservable{``3}},System.Func{``1,``3})">
+            <summary>
+            Match the two states of the Validation and return an observable stream of non-null R2s.
+            </summary>
+        </member>
+        <member name="M:LanguageExt.ValidationRxExtensions.MatchObservable``4(LanguageExt.Validation{``0,``1,``2},System.Func{``2,System.IObservable{``3}},System.Func{``1,System.IObservable{``3}})">
+            <summary>
+            Match the two states of the Validation and return an observable stream of non-null R2s.
+            </summary>
+        </member>
+        <member name="M:LanguageExt.ValidationSeqRxExtensions.MatchObservable``3(LanguageExt.Validation{``0,``1},System.Func{``1,System.IObservable{``2}},System.Func{LanguageExt.Seq{``0},``2})">
+            <summary>
+            Match the two states of the Validation and return an observable stream of non-null R2s.
+            </summary>
+        </member>
+        <member name="M:LanguageExt.ValidationSeqRxExtensions.MatchObservable``3(LanguageExt.Validation{``0,``1},System.Func{``1,System.IObservable{``2}},System.Func{LanguageExt.Seq{``0},System.IObservable{``2}})">
+            <summary>
+            Match the two states of the Validation and return an observable stream of non-null R2s.
+            </summary>
+        </member>
+    </members>
+</doc>
