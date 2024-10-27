@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.11.35327.3
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Bloque2-Actividad1-Creando-objetos", "Bloque2-Actividad1-Creando-objetos\Bloque2-Actividad1-Creando-objetos.csproj", "{73016B39-4079-4DFA-B20D-756D05560CAF}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{73016B39-4079-4DFA-B20D-756D05560CAF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{73016B39-4079-4DFA-B20D-756D05560CAF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{73016B39-4079-4DFA-B20D-756D05560CAF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{73016B39-4079-4DFA-B20D-756D05560CAF}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {7072C150-803B-48DC-8C55-F24F185D5A85}
+	EndGlobalSection
+EndGlobal
