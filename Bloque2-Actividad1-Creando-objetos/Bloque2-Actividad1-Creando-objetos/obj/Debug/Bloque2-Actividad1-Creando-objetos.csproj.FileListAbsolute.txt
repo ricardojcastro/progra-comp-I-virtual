@@ -1,0 +1,12 @@
+C:\Users\ricar\Desktop\progra-comp-I-virtual\Bloque2-Actividad1-Creando-objetos\Bloque2-Actividad1-Creando-objetos\bin\Debug\db_peliculas.mdf
+C:\Users\ricar\Desktop\progra-comp-I-virtual\Bloque2-Actividad1-Creando-objetos\Bloque2-Actividad1-Creando-objetos\bin\Debug\db_peliculas_log.ldf
+C:\Users\ricar\Desktop\progra-comp-I-virtual\Bloque2-Actividad1-Creando-objetos\Bloque2-Actividad1-Creando-objetos\bin\Debug\Bloque2-Actividad1-Creando-objetos.exe.config
+C:\Users\ricar\Desktop\progra-comp-I-virtual\Bloque2-Actividad1-Creando-objetos\Bloque2-Actividad1-Creando-objetos\bin\Debug\Bloque2-Actividad1-Creando-objetos.exe
+C:\Users\ricar\Desktop\progra-comp-I-virtual\Bloque2-Actividad1-Creando-objetos\Bloque2-Actividad1-Creando-objetos\bin\Debug\Bloque2-Actividad1-Creando-objetos.pdb
+C:\Users\ricar\Desktop\progra-comp-I-virtual\Bloque2-Actividad1-Creando-objetos\Bloque2-Actividad1-Creando-objetos\obj\Debug\Bloque2-Actividad1-Creando-objetos.csproj.AssemblyReference.cache
+C:\Users\ricar\Desktop\progra-comp-I-virtual\Bloque2-Actividad1-Creando-objetos\Bloque2-Actividad1-Creando-objetos\obj\Debug\Bloque2_Actividad1_Creando_objetos.Form1.resources
+C:\Users\ricar\Desktop\progra-comp-I-virtual\Bloque2-Actividad1-Creando-objetos\Bloque2-Actividad1-Creando-objetos\obj\Debug\Bloque2_Actividad1_Creando_objetos.Properties.Resources.resources
+C:\Users\ricar\Desktop\progra-comp-I-virtual\Bloque2-Actividad1-Creando-objetos\Bloque2-Actividad1-Creando-objetos\obj\Debug\Bloque2-Actividad1-Creando-objetos.csproj.GenerateResource.cache
+C:\Users\ricar\Desktop\progra-comp-I-virtual\Bloque2-Actividad1-Creando-objetos\Bloque2-Actividad1-Creando-objetos\obj\Debug\Bloque2-Actividad1-Creando-objetos.csproj.CoreCompileInputs.cache
+C:\Users\ricar\Desktop\progra-comp-I-virtual\Bloque2-Actividad1-Creando-objetos\Bloque2-Actividad1-Creando-objetos\obj\Debug\Bloque2-Actividad1-Creando-objetos.exe
+C:\Users\ricar\Desktop\progra-comp-I-virtual\Bloque2-Actividad1-Creando-objetos\Bloque2-Actividad1-Creando-objetos\obj\Debug\Bloque2-Actividad1-Creando-objetos.pdb
