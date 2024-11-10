@@ -1,0 +1,37 @@
+{
+  "Files": [
+    {
+      "Id": "C:\\Users\\ricar\\Desktop\\progra-comp-I-virtual\\ProyectoFinal\\ProyectoFinal\\wwwroot\\Views\\Img\\logo.png",
+      "PackagePath": "staticwebassets\\Views\\Img\\logo.png"
+    },
+    {
+      "Id": "C:\\Users\\ricar\\Desktop\\progra-comp-I-virtual\\ProyectoFinal\\ProyectoFinal\\wwwroot\\Views\\Img\\unnamed.jpg",
+      "PackagePath": "staticwebassets\\Views\\Img\\unnamed.jpg"
+    },
+    {
+      "Id": "C:\\Users\\ricar\\Desktop\\progra-comp-I-virtual\\ProyectoFinal\\ProyectoFinal\\wwwroot\\Views\\Index.html",
+      "PackagePath": "staticwebassets\\Views\\Index.html"
+    },
+    {
+      "Id": "C:\\Users\\ricar\\Desktop\\progra-comp-I-virtual\\ProyectoFinal\\ProyectoFinal\\wwwroot\\Views\\Pelicula.html",
+      "PackagePath": "staticwebassets\\Views\\Pelicula.html"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.ProyectoFinal.Microsoft.AspNetCore.StaticWebAssets.props",
+      "PackagePath": "build\\Microsoft.AspNetCore.StaticWebAssets.props"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.build.ProyectoFinal.props",
+      "PackagePath": "build\\ProyectoFinal.props"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.buildMultiTargeting.ProyectoFinal.props",
+      "PackagePath": "buildMultiTargeting\\ProyectoFinal.props"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.buildTransitive.ProyectoFinal.props",
+      "PackagePath": "buildTransitive\\ProyectoFinal.props"
+    }
+  ],
+  "ElementsToRemove": []
+}

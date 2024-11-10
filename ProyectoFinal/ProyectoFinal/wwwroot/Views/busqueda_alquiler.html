@@ -1,0 +1,64 @@
+﻿﻿<form id="frmBusquedaAlquiler">
+    <div class="card text-bg-dark mb-3" style="width: 700px">
+        <div class="card-header">
+            <div class="d-flex">
+                Consulta de Alquiler
+                <div class="ms-auto">
+                    <button type="button" data-form="busqueda_alquiler" class="btn-close btn-close-white"></button>
+                </div>
+            </div>
+        </div>
+        <div class="card-body">
+            <table class="table table-dark table-hover" id="tblConsultaAlquiler">
+                <thead>
+                    <tr>
+                        <th>PELICULA</th>
+                        <th>RESPONSABLE</th>
+                        <th>DUI</th>
+                        <th>DIRECCION</th>
+                        <th>TELEFONO</th>
+                        <th></th>
+                    </tr>
+                </thead>
+                <tbody></tbody>
+            </table>
+        </div>
+    </div>
+</form>
+<script>
+    listarAlquiler();
+    async function listarAlquiler() {
+        const respuesta = await fetch('/api/Alquiler'),
+            alquiler = await respuesta.json();
+        let filas = "";
+        alquiler.forEach(alquiler => {
+            filas += `
+                <tr onclick='modificaralquiler(${JSON.stringify(alquiler)})'>
+                    <td>${alquiler.pelicula}</td>
+                    <td>${alquiler.responsable}</td>
+                    <td>${alquiler.dui}</td>
+                    <td>${alquiler.direccion}</td>
+                    <td>${alquiler.telefono}</td>
+                    <td><button class="btn btn-danger" onClick='eliminaralquiler(${JSON.stringify(alquiler)}, event)'>DEL</button></td>
+            `;
+        });
+        $("#tblConsultaAlquiler > tbody > tr").remove();
+        $("#tblConsultaAlquiler > tbody").append(filas);
+    }
+    async function eliminarAlquiler(alquiler, e) {
+        e.preventDefault();
+        if (confirm(`Esta seguro de eliminar a ${alquiler.titulo.trim()}?`)) {
+            const respuesta = await fetch(`https://localhost:7130/api/peliculas/${alquiler.idAlquiler}`, {
+                method:"DELETE",
+                headers: {
+                    "Content-Type": "application/text"
+                }
+            }), datos = await respuesta.text();
+            if (datos && datos.length > 0) {
+                consol.error(datos);
+            } else {
+                listarAlquiler();
+            }
+        }
+    }
+</script>
